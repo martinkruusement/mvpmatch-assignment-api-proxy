@@ -4,12 +4,11 @@ import bodyParser from 'body-parser'
 import fetch from 'node-fetch'
 import dotenv from 'dotenv'
 
-dotenv.config()
-
 const app = express()
 const port = 80
 app.use(cors())
 app.use(bodyParser.json())
+dotenv.config()
 
 app.get('/', (req, browser) => { browser.send('API PROXY SYSTEMS ONLINE') })
 app.get('/favicon.ico', (req, browser) => { browser.sendStatus(404) })
